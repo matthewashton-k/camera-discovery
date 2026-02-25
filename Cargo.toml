@@ -1,0 +1,12 @@
+[package]
+name = "camera-discovery"
+version = "0.1.0"
+edition = "2021"
+description = "A simple tool to discover cameras connected to the system using udev, prints the device path."
+license = "MIT"
+
+[dependencies]
+udev = "0.9"
+anyhow = "1"
+
+[workspace] 
