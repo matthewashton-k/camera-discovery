@@ -7,7 +7,7 @@ fn print_existing() -> Result<()> {
     let mut enumr = Enumerator::with_udev(udev)?;
     enumr.match_subsystem("video4linux")?;
     for dev in enumr.scan_devices()? {
-        if let (Some(node), Some(id_path)) = (dev.devnode(), dev.property_value("ID_PATH")) {
+        if let (Some(node), Some(id_path)) = (dev.devnode(), dev.property_value("DEV_PATH")) {
             println!("EXISTING {:<4} => {}", node.display(), id_path.to_string_lossy());
         }
     }
