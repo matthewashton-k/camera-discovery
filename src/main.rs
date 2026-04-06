@@ -28,7 +28,7 @@ fn main() -> Result<()> {
     loop {
         for event in monitor.iter() {
             if let Some(node) = event.devnode() {
-                let id_path = event.property_value("ID_PATH").map(|s| s.to_string_lossy());
+                let id_path = event.property_value("DEV_PATH").map(|s| s.to_string_lossy());
                 match event.event_type() {
                     EventType::Add => {
                         println!("ADD  {:<4} => {}", node.display(), id_path.unwrap_or_default());
